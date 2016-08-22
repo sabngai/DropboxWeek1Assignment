@@ -40,6 +40,13 @@ class WelcomePageViewController: UIPageViewController, UIPageViewControllerDataS
             let currentIndex = pages.indexOf(viewController)!
             let nextIndex = abs((currentIndex + 1) % pages.count)
             
+            print("current index \(currentIndex)")
+            
+            //prevents from going beyond 3rd page
+            if currentIndex == 2 {
+                return nil
+            }
+            
             return pages[nextIndex]
         }
         
